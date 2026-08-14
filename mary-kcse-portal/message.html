@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary Saru | Your Portal Message</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">👑 Mary Saru & Dev Bestie</div>
+        <ul>
+            <li><a href="message.html" class="active">Profile</a></li>
+            <li><a href="memories.html">Memories</a></li>
+            <li><a href="post-form4.html">Post-Form 4</a></li>
+            <li><a href="countdown.html">Countdown</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="card">
+            <h2>💖 A Heartfelt Message To You, Mary</h2>
+            <p id="greetingText" style="font-size: 1.15rem; line-height: 1.6; color: #fef08a; font-weight: 500; margin-bottom: 1.5rem;"></p>
+            <p style="font-size: 1.05rem; line-height: 1.6; color: #f8fafc;">
+                Even though we just met this year, you’ve brought so much joy, laughter, and bright energy into my world. Building this full-stack portal from Mwatate for a brilliant star from Bura Girls has been an absolute honor. You are destined for greatness in your KCSE and beyond! 🚀🌟
+            </p>
+        </div>
+
+        <div class="card">
+            <h2>📋 Your Profile Summary</h2>
+            <div id="summaryContent" style="font-size: 1rem; line-height: 1.8; color: #f1f5f9;"></div>
+        </div>
+
+        <div style="margin-top: 1rem;">
+            <a href="memories.html" class="btn">📸 View Our Memories</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>Crafted with full-stack care by your favorite Dev Bestie from Mwatate.</p>
+    </footer>
+
+    <script>
+        const saved = JSON.parse(localStorage.getItem('maryDetails')) || {
+            fullName: "Mary Saru", residence: "Bura", formLevel: "Form 4", kcseTarget: "A", bestMemories: "High school moments", favorites: "Everything awesome", hobbies: "Chilling"
+        };
+
+        document.getElementById('greetingText').innerText = `Hello, ${saved.fullName} from ${saved.residence}!`;
+        document.getElementById('summaryContent').innerHTML = `
+            <strong>Full Name:</strong> ${saved.fullName}<br>
+            <strong>Residence:</strong> ${saved.residence}<br>
+            <strong>Class Level:</strong> ${saved.formLevel}<br>
+            <strong>KCSE Target:</strong> ${saved.kcseTarget} 🎯<br>
+            <strong>Best Memories:</strong> ${saved.bestMemories}<br>
+            <strong>Favorites:</strong> ${saved.favorites}<br>
+            <strong>Hobbies:</strong> ${saved.hobbies}
+        `;
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mary Saru | Questionnaire</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h2>📝 Tell Us About Yourself, Mary!</h2>
+            <p style="color: #fef08a; margin-bottom: 1.5rem; text-align: center;">Please fill in all fields below to unlock your personalized portal & message.</p>
+            
+            <form id="detailsForm" onsubmit="saveDetails(event)">
+                <div class="form-group">
+                    <label>All Your Names:</label>
+                    <input type="text" id="fullName" required placeholder="e.g., Mary Saru">
+                </div>
+                <div class="form-group">
+                    <label>Place You Live In:</label>
+                    <input type="text" id="residence" required placeholder="e.g., Bura / Taita Taveta">
+                </div>
+                <div class="form-group">
+                    <label>What Form Are You In?</label>
+                    <input type="text" id="formLevel" required value="Form 4">
+                </div>
+                <div class="form-group">
+                    <label>Your KCSE Target Grade:</label>
+                    <input type="text" id="kcseTarget" required placeholder="e.g., Straight A / A-">
+                </div>
+                <div class="form-group">
+                    <label>Your Best High School Memories:</label>
+                    <textarea id="bestMemories" rows="2" required placeholder="Share your favorite moments..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Your Favorites (Food, Colors, etc.):</label>
+                    <input type="text" id="favorites" required placeholder="e.g., Pizza, Blue, Coding">
+                </div>
+                <div class="form-group">
+                    <label>Your Hobbies:</label>
+                    <input type="text" id="hobbies" required placeholder="e.g., Reading, Chilling, Exploring">
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn">Enter Portal 🚀</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function saveDetails(event) {
+            event.preventDefault();
+            const data = {
+                fullName: document.getElementById('fullName').value,
+                residence: document.getElementById('residence').value,
+                formLevel: document.getElementById('formLevel').value,
+                kcseTarget: document.getElementById('kcseTarget').value,
+                bestMemories: document.getElementById('bestMemories').value,
+                favorites: document.getElementById('favorites').value,
+                hobbies: document.getElementById('hobbies').value
+            };
+            localStorage.setItem('maryDetails', JSON.stringify(data));
+            window.location.href = 'message.html';
+        }
+    </script>
+</body>
+</html>
